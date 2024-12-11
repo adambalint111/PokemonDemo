@@ -1,8 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   const response = await fetch(
-    "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"
+    "https://pokeapi.co/api/v2/pokemon?limit=100&offset=0"
   );
   const data = await response.json();
   const pokemonDetails = await Promise.all(
